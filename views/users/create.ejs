@@ -1,0 +1,32 @@
+<% include ../partials/header %>
+
+
+<body>
+
+    <!-- Following Menu -->
+
+    <!-- Page Contents -->
+    <div class="pusher">
+        <div class="ui vertical stripe segment">
+            <div class="ui middle aligned stackable grid container">
+                <div class="row">
+                    <div class="eight wide column">
+                        <h3 class="ui header">Create new User</h3>
+                        <form class="ui form wide" action="create" method="post">
+                            <div class="field">
+                                <label>Original URL</label>
+                                <input name="url" placeholder="Url" type="text">
+                            </div>
+                            <button class="ui primary button" type="submit">Shorten please!</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <% include ../partials/footer %>
+
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+{
+    "development": {
+        "username": "dikyarga",
+        "password": "dikyarga",
+        "database": "auth",
+        "host": "127.0.0.1",
+        "dialect": "postgres"
+    },
+    "production": {
+        "use_env_variable": "DATABASE_URL",
+        "username": "ccipulioogjmya",
+        "password": "ec3ebb903b9faa415cc1777be148d05b3197843ac84a4ebd94029ca3d046fae0",
+        "database": "d40n8eq3oc7o8a",
+        "host": "ec2-54-163-236-33.compute-1.amazonaws.com",
+        "dialect": "postgres"
+    }
+}

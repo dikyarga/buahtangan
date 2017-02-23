@@ -1,0 +1,61 @@
+<div class="ui borderless main menu">
+  <div class="ui text container">
+    <a href="/">
+    <div href="/" class="header item">
+      <img class="logo" src="/images/helm-proyek.png">
+      Helm Proyek
+    </div>
+    </a>
+    <% if(session.username) { %>
+
+
+
+      <a href="/users/new" class="item">Create New User</a>
+      <a href="/users/" class="item">List Helm</a>
+      <a href="#" class="ui right floated dropdown item">
+        Menu <i class="dropdown icon"></i>
+        <div class="menu">
+
+          <div class="item" onclick="location.href='/setting';">Setting</div>
+
+          <div class="divider"></div>
+          <div class="item" onclick="location.href='/logout';">Logout</div>
+          <!-- <div class="divider"></div>
+          <div class="header">Header Item</div>
+          <div class="item">
+          <i class="dropdown icon"></i>
+          Sub Menu
+          <div class="menu">
+          <div class="item">Link Item</div>
+          <div class="item">Link Item</div> -->
+        </div>
+
+  </a>
+<% } else { %>
+
+
+
+      <a href="/register" class="item">Register</a>
+      <a href="/login" class="item">Login</a>
+      <a href="#" class="ui right floated dropdown item">
+        Menu <i class="dropdown icon"></i>
+        <div class="menu">
+          <div class="item">Register</div>
+          <div class="item">Login</div>
+          <!-- <div class="divider"></div>
+          <div class="header">Header Item</div>
+          <div class="item">
+          <i class="dropdown icon"></i>
+          Sub Menu
+          <div class="menu">
+          <div class="item">Link Item</div>
+          <div class="item">Link Item</div>
+        </div>
+      </div>
+      <div class="item">Link Item</div> -->
+    </div>
+  </a>
+<% }%>
+
+  </div>
+</div>

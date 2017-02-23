@@ -1,0 +1,32 @@
+<% include ../partials/header %>
+
+
+<body>
+
+    <!-- Following Menu -->
+
+    <!-- Page Contents -->
+    <div class="pusher">
+        <div class="ui vertical stripe segment">
+            <div class="ui middle aligned stackable grid container">
+              <a href="/urls" class="ui button">Back to list</a>
+                <div class="row">
+                    <div class="eight wide column">
+                        <h3 class="ui header">Create new User</h3>
+                        <h4>Original Link</h4>
+                        <a href="/link/<%= link.url %>"><%= link.url %></a>
+                        <h4>Shorted Link</h4>
+                        <a href="/link/<%= link.shorted %>"><%= link.shorted %></a>
+                        <h4>Click Count</h4>
+                        <%= link.click %>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <% include ../partials/footer %>
+
+</body>
+
+</html>
