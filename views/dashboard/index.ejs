@@ -1,19 +1,43 @@
-<% include ../partials/header %>
+
+
+    </html>
+
+    <% include ../partials/header %>
 
     <body>
 
+    <!-- Following Menu -->
+    <% include ../partials/menu/following %>
 
 
-        <% include ../partials/menu %>
+    <% include ../partials/menu/sidebar %>
 
-      <!-- menu -->
 
-      <div class="ui text container">
-          <img class="ui medium left floated image" data-src="/images/helm-proyek.png">
-          <h2>Hello, <b><%= username %></b></h2>
-          <h3>Here is your "helm proyek mu" dashboard</h3>
+    <!-- Page Contents -->
+    <div class="pusher">
+      <div class="ui inverted vertical center aligned segment">
+        <% include ../partials/menu/inside %>
+      </div>
+
+      <div class="ui vertical stripe segment">
+        <div class="ui middle aligned stackable grid container">
+          <div class="row">
+            <div class="eight wide column">
+              <div class="ui vertical stripe segment">
+
+                      <h1>Welcome, <%= session.username  %></h1>
+              </div>
+            </div>
+            <div class="six wide right floated column">
+              <img src="assets/images/wireframe/white-image.png" class="ui large bordered rounded image">
+            </div>
+          </div>
+        </div>
       </div>
       <% include ../partials/footer %>
+
+    </div>
+
     </body>
 
     </html>

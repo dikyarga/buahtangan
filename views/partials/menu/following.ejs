@@ -1,15 +1,27 @@
 <div class="ui large top fixed hidden menu">
   <div class="ui container">
-    <a class="active item">Home</a>
-    <a class="item">Shop</a>
-    <a class="item">Checkout</a>
-    <div class="right menu">
-      <div class="item">
-        <a href="/login" class="ui button">Log in</a>
+    <a href="/" class="active item">Home</a>
+    <% if(session.username) { %>
+      <div class="right menu">
+        <div class="item">
+          <a href="/cart" class="ui primary button">Cart</a>
+        </div>
+        <div class="item">
+          <a href="/logout" class="ui button">Logout</a>
+        </div>
       </div>
-      <div class="item">
-        <a href="/register" class="ui primary button">Sign Up</a>
+    <% } else { %>
+      <a class="item">Shop</a>
+      <div class="right menu">
+        <div class="item">
+          <a href="/login" class="ui button">Log in</a>
+        </div>
+        <div class="item">
+          <a href="/register" class="ui primary button">Sign Up</a>
+        </div>
       </div>
-    </div>
+    <% } %>
+
+
   </div>
 </div>

@@ -1,64 +1,78 @@
-<% include ../partials/header %>
+        <% include ../partials/header %>
 
-
-    <body>
+        <body>
 
         <!-- Following Menu -->
-        <% include ../partials/menu %>
+        <% include ../partials/menu/following %>
+
+
+        <% include ../partials/menu/sidebar %>
+
 
         <!-- Page Contents -->
         <div class="pusher">
-            <div class="pusher">
-                <div class="ui vertical stripe segment">
-                    <div class="ui middle aligned stackable grid container">
+          <div class="ui inverted vertical center aligned segment">
+            <% include ../partials/menu/inside %>
+          </div>
 
-                        <div class="ui middle aligned center aligned grid">
-                            <div class="column">
-                                <h2 class="ui teal image header">
-                                  <img src="/images/helm-proyek.png" class="image">
+          <div class="ui vertical stripe segment">
+            <div class="ui middle aligned stackable grid container">
+              <div class="row">
+                <div class="eight wide column">
+                  <div class="ui vertical stripe segment">
+                    <div class="ui middle aligned center aligned grid">
+                        <div class="column">
+                            <h2 class="ui teal image header">
+                              <img src="/images/helm-proyek.png" class="image">
 
-                                  <div class="content">
-                                    Register an Account
-                                  </div>
-                                </h2>
-                                <form class="ui large form" action="/users/create" method="post">
-                                    <div class="ui stacked segment">
-                                        <div class="field">
-                                            <div class="ui left icon input">
-                                                <i class="user icon"></i>
-                                                <input type="text" name="username" placeholder="Username">
-                                            </div>
+                              <div class="content">
+                                Register an Account
+                              </div>
+                            </h2>
+                            <form class="ui large form" action="/users/create" method="post">
+                                <div class="ui stacked segment">
+                                    <div class="field">
+                                        <div class="ui left icon input">
+                                            <i class="user icon"></i>
+                                            <input type="text" name="username" placeholder="Username">
                                         </div>
-                                        <div class="field">
-                                            <div class="ui left icon input">
-                                                <i class="user icon"></i>
-                                                <input type="text" name="email" placeholder="E-mail address">
-                                            </div>
-                                        </div>
-                                        <div class="field">
-                                            <div class="ui left icon input">
-                                                <i class="lock icon"></i>
-                                                <input type="password" name="password" placeholder="Password">
-                                            </div>
-                                        </div>
-                                        <div class="ui fluid large teal submit button">Register</div>
                                     </div>
-
-                                    <div class="ui error message"></div>
-
-                                </form>
-
-                                <div class="ui message">
-                                    Already have an account ? <a href="/login">Login</a>
+                                    <div class="field">
+                                        <div class="ui left icon input">
+                                            <i class="user icon"></i>
+                                            <input type="text" name="email" placeholder="E-mail address">
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <div class="ui left icon input">
+                                            <i class="lock icon"></i>
+                                            <input type="password" name="password" placeholder="Password">
+                                        </div>
+                                    </div>
+                                    <div class="ui fluid large teal submit button">Register</div>
                                 </div>
+
+                                <div class="ui error message"></div>
+
+                            </form>
+
+                            <div class="ui message">
+                                Already have an account ? <a href="/login">Login</a>
                             </div>
                         </div>
                     </div>
+                  </div>
                 </div>
+                <div class="six wide right floated column">
+                  <img src="assets/images/wireframe/white-image.png" class="ui large bordered rounded image">
+                </div>
+              </div>
             </div>
+          </div>
+          <% include ../partials/footer %>
+
         </div>
-        <% include ../partials/footer %>
 
-    </body>
+        </body>
 
-    </html>
+        </html>

@@ -3,12 +3,18 @@
     <a class="toc item">
       <i class="sidebar icon"></i>
     </a>
-    <a class="active item">Home</a>
-    <a class="item">Shop</a>
-    <a class="item">Checkout</a>
-    <div class="right item">
-      <a href="/login" class="ui inverted button">Log in</a>
-      <a href="/register" class="ui inverted button">Sign Up</a>
-    </div>
+    <a href="/" class="active item">Home</a>
+    <% if(session.username) { %>
+      <div class="right item">
+        <a href="/cart" class="ui inverted button">Cart</a>
+        <a href="/logout" class="ui inverted button">Logout</a>
+      </div>
+<% } else { %>
+  <a href="/" class="item">Shop</a>
+  <div class="right item">
+    <a href="/login" class="ui inverted button">Log in</a>
+    <a href="/register" class="ui inverted button">Sign Up</a>
+  </div>
+<% } %>
   </div>
 </div>
