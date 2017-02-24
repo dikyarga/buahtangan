@@ -6,16 +6,11 @@ class help {
  static total (items){
 let total=0;
    for (var i = 0; i < items.length; i++) {
-      total=total+items.price;
+      total=total+parseInt(items[i].price)
    }
 
     return total
  }
-
-
-
-
-
 
 }
 

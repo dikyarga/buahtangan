@@ -49,7 +49,7 @@
                 <p><%= item.description %> </p>
               </div>
               <br/>
-              <a href="/cart/delete/<%= item.Chart.id %>" class="mini ui negative basic button">Buang dari keranjang</a>
+              <a href="/cart/delete/<%= item.id %>" class="mini ui negative basic button">Buang dari keranjang</a>
             </div>
           </div>
     <div class="ui divider"></div>
@@ -61,7 +61,7 @@
 </div>
       </div>
 <div class="row">
-<h1>Total : Rp. 50.000,-</h1>
+<h1>Total : Rp. <%= total %>,-</h1>
 </div>
 <div class="ui divider"></div>
 
@@ -73,12 +73,12 @@
         </h2>
       </div>
       <div class="ui divider"></div>
-      
+
       <div class="row">
         <div class="ui text container">
 
         <div class="ui huge button"><a href="/">Lanjut belanja lagi</a></div>
-        <div class="ui huge primary button">Checkout sekarang <i class="right arrow icon"></i></div>
+      <a href="/cart/checkout">  <div class="ui huge primary button">Checkout sekarang <i class="right arrow icon"></i></div></a>
       </div>
       </div>
 
