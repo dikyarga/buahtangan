@@ -51,6 +51,7 @@ router.post('/create', function(req, res, next){
    }).then((user) => {
      console.log('------------', user.id);
      req.session.username = req.body.username
+     req.session.userid = user.id
      req.session.id = user.id
      req.session.email = user.email
      req.session.role = user.role
@@ -74,6 +75,7 @@ router.post('/login', function(req, res, next){
       .digest('hex');
       if (user.password == hash) {
         req.session.username = user.username
+        req.session.userid = user.id
         req.session.id = user.id
         req.session.email = user.email
         req.session.role = user.role
