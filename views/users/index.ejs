@@ -10,13 +10,13 @@
             <div class="ui middle aligned stackable grid container">
                 <div class="row">
                     <div class="two wide column">
-                        <h3 class="ui header">All Links </h3>
+                        <h3 class="ui header">All Users </h3>
 
                     </div>
                     <div class="four wide column right">
-                        <a href="/urls/new" class="ui basic button">
+                        <a href="/items/new" class="ui basic button">
                           <i class="icon user"></i>
-                          Add Link
+                          Add User
                         </a>
                     </div>
                   </div>
@@ -25,9 +25,9 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Original URL</th>
-                                <th>Shorted</th>
-                                <th>Click Count</th>
+                                <th>user name</th>
+                                <th>email</th>
+                                <th>role</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -40,21 +40,21 @@
                                         <%= user.id %>
                                     </td>
                                     <td>
-                                        <a href="<%= user.url %>"><%= user.url %></a>
+                                        <%= user.username %>
                                     </td>
                                     <td>
-                                      <a href="/user/<%= user.shorted%>"><%= user.shorted%></a>
-                                      
+                                    <%= user.email%>>
+
                                     </td>
                                     <td>
-                                      <%= user.click %>
+                                      <%= user.role %>
                                     </td>
 
                                     <td>
                                         <div class="ui icon buttons">
-                                            <a href="/urls/<%= user.id %>" class="ui button"><i class="unhide icon"></i></a>
-                                            <a href="/urls/<%= user.id %>/edit" class="ui button"><i class="edit icon"></i></a>
-                                            <a href="/urls/<%= user.id %>/delete" onclick="return confirm('Are you sure you want to delete this item?');" class="ui button"><i class="trash icon"></i></a>
+                                            <a href="/users/<%= user.id %>" class="ui button"><i class="unhide icon"></i></a>
+                                            <a href="/users/edit/<%= user.id %>/" class="ui button"><i class="edit icon"></i></a>
+                                            <a href="/users/delete/<%= user.id %>/" onclick="return confirm('Are you sure you want to delete this item?');" class="ui button"><i class="trash icon"></i></a>
                                         </div>
                                     </td>
                                 </tr>

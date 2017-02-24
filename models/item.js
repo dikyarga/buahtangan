@@ -3,7 +3,8 @@ module.exports = function(sequelize, DataTypes) {
   var Item = sequelize.define('Item', {
     name: DataTypes.STRING,
     price: DataTypes.STRING,
-    description: DataTypes.TEXT
+    description: DataTypes.TEXT,
+    //pictlink:DataTypes.STRING
   }, {
     classMethods: {
       associate: function(models) {
