@@ -4,7 +4,7 @@ module.exports = function(sequelize, DataTypes) {
     name: DataTypes.STRING,
     price: DataTypes.STRING,
     description: DataTypes.TEXT,
-    //pictlink:DataTypes.STRING
+    pictlink:DataTypes.STRING
   }, {
     classMethods: {
       associate: function(models) {
