@@ -28,6 +28,7 @@
                                 <th>Name</th>
                                 <th>Price</th>
                                 <th>Description</th>
+                                <th>picture link</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -40,21 +41,25 @@
                                         <%= item.id %>
                                     </td>
                                     <td>
-                                        <a href="<%= item.url %>"><%= item.url %></a>
+                                        <%= item.name %>
                                     </td>
                                     <td>
-                                      <a href="/item/<%= item.shorted%>"><%= item.shorted%></a>
-                                        <!-- <%= helper.beautifyUrl(item.shorted) %> -->
+                                      <%= item.price%>
+
                                     </td>
                                     <td>
-                                      <%= item.click %>
+                                      <%= item.description %>
+                                    </td>
+
+                                    <td>
+                                      <%= item.pictlink %>
                                     </td>
 
                                     <td>
                                         <div class="ui icon buttons">
                                             <a href="/items/<%= item.id %>" class="ui button"><i class="unhide icon"></i></a>
-                                            <a href="/items/<%= item.id %>/edit" class="ui button"><i class="edit icon"></i></a>
-                                            <a href="/items/<%= item.id %>/delete" onclick="return confirm('Are you sure you want to delete this item?');" class="ui button"><i class="trash icon"></i></a>
+                                            <a href="/items/edit/<%= item.id %>" class="ui button"><i class="edit icon"></i></a>
+                                            <a href="/items/delete/<%= item.id %>" onclick="return confirm('Are you sure you want to delete this item?');" class="ui button"><i class="trash icon"></i></a>
                                         </div>
                                     </td>
                                 </tr>
