@@ -35,7 +35,7 @@
 
           <div class="ui items">
             <% useritem.forEach(function(item){ %>
-
+<br/>
           <div class="item">
             <div class="ui small image">
               <img src="<%= item.pictlink %>">
@@ -43,13 +43,16 @@
             <div class="content">
               <div class="header"><%= item.name %></div>
               <div class="meta">
-                <span class="price"><%= item.price %></span>
+                <span class="price">Rp. <%= item.price %>,-</span>
               </div>
               <div class="description">
                 <p><%= item.description %> </p>
               </div>
+              <br/>
+              <a href="/cart/delete/<%= item.Chart.id %>" class="mini ui negative basic button">Buang dari keranjang</a>
             </div>
           </div>
+    <div class="ui divider"></div>
           <%  })%>
 
 
@@ -57,6 +60,10 @@
         </div>
 </div>
       </div>
+<div class="row">
+<h1>Total : Rp. 50.000,-</h1>
+</div>
+<div class="ui divider"></div>
 
       <div class="row">
 
@@ -65,6 +72,8 @@
           dari pada dimarahi orang tersayang karena gak bawa buah tangan ? hayo lho...
         </h2>
       </div>
+      <div class="ui divider"></div>
+      
       <div class="row">
         <div class="ui text container">
 
