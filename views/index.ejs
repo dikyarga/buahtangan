@@ -15,9 +15,16 @@
 
     <% include ./partials/menu/inside %>
 
-
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
     <div class="ui text container">
       <h1 class="ui inverted header">
+        <!-- <div class="ui massive blue label">
+          Buah Tangan
+        </div> -->
         Buah Tangan
       </h1>
       <h2>Habis liburan ? <br/>
@@ -40,82 +47,36 @@
       <div class="row">
         <div class="ui link cards">
 
+<% items.forEach(function(item) { %>
+
 
   <div class="card">
     <div class="image">
-      <img src="/images/avatar2/large/elyse.png">
+      <img src="<%= item.pictlink %>">
     </div>
     <div class="content">
-      <div class="header">Otak otak </div>
+      <div class="header"><%= item.name %> </div>
       <div class="meta">
         <a>Makanan</a>
       </div>
       <div class="description">
-        Elyse is a copywriter working in New York.
+        <%= item.description %>
       </div>
     </div>
     <div class="extra content">
       <span class="right floated">
-        <button class="ui primary button">
+        <a href="/cart/<%= item.id %>" class="ui primary button">
             Beli
-          </button>
+          </a>
       </span>
       <span>
         <i class="money icon"></i>
-        <b>Rp. 50.000,-</b>
+        <b>Rp. <%= item.price %>,-</b>
       </span>
     </div>
   </div>
-  <div class="card">
-    <div class="image">
-      <img src="/images/avatar2/large/elyse.png">
-    </div>
-    <div class="content">
-      <div class="header">Otak otak </div>
-      <div class="meta">
-        <a>Makanan</a>
-      </div>
-      <div class="description">
-        Elyse is a copywriter working in New York.
-      </div>
-    </div>
-    <div class="extra content">
-      <span class="right floated">
-        <button class="ui primary button">
-            Beli
-          </button>
-      </span>
-      <span>
-        <i class="money icon"></i>
-        <b>Rp. 50.000,-</b>
-      </span>
-    </div>
-  </div>
-  <div class="card">
-    <div class="image">
-      <img src="/images/avatar2/large/elyse.png">
-    </div>
-    <div class="content">
-      <div class="header">Otak otak </div>
-      <div class="meta">
-        <a>Makanan</a>
-      </div>
-      <div class="description">
-        Elyse is a copywriter working in New York.
-      </div>
-    </div>
-    <div class="extra content">
-      <span class="right floated">
-        <button class="ui primary button">
-            Beli
-          </button>
-      </span>
-      <span>
-        <i class="money icon"></i>
-        <b>Rp. 50.000,-</b>
-      </span>
-    </div>
-  </div>
+
+<% })%>
 </div>
       </div>
 

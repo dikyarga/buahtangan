@@ -364,7 +364,7 @@
   -webkit-box-flex: 1;
           flex: 1 1 auto;
   -ms-flex: 1 1 0px;
-  
+
 /* Solves #2550 MS Flex */
   margin: 0em;
   min-width: 0px;
@@ -788,4 +788,3 @@
 /*******************************
          Site Overrides
 *******************************/
-
