@@ -6,11 +6,35 @@ let db = require('../models')
 const crypto = require('crypto');
 const shortid = require('shortid');
 
+let faker = require('faker')
+
 /* GET users listing. */
 router.get('/', function(req, res, next) {
+    db.User.findAll().then(function(users){
+     res.render('users/index', {users})
 
-  res.send('respond with a resource');
+    })
 });
+
+router.get('/generate/:amount', function(req, res, next){
+  // console.log(req.body);
+
+  for (var i = 0; i < req.params.amount; i++) {
+    const secret = shortid.generate();
+    const hash = crypto.createHmac('sha256', secret)
+                       .update('secret')
+                       .digest('hex');
+     db.User.create({
+       username: faker.internet.userName(),
+       email: faker.internet.email(),
+       password: hash,
+       salt: secret,
+       role: 'client'
+     })
+  }
+
+})
+
 
 router.post('/create', function(req, res, next){
   console.log(req.body);

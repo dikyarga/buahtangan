@@ -34,27 +34,27 @@
 
                         <tbody>
 
-                            <% links.forEach(function(link){  %>
+                            <% users.forEach(function(user){  %>
                                 <tr>
                                     <td>
-                                        <%= link.id %>
+                                        <%= user.id %>
                                     </td>
                                     <td>
-                                        <a href="<%= link.url %>"><%= link.url %></a>
+                                        <a href="<%= user.url %>"><%= user.url %></a>
                                     </td>
                                     <td>
-                                      <a href="/link/<%= link.shorted%>"><%= link.shorted%></a>
-                                        <!-- <%= helper.beautifyUrl(link.shorted) %> -->
+                                      <a href="/user/<%= user.shorted%>"><%= user.shorted%></a>
+                                      
                                     </td>
                                     <td>
-                                      <%= link.click %>
+                                      <%= user.click %>
                                     </td>
 
                                     <td>
                                         <div class="ui icon buttons">
-                                            <a href="/urls/<%= link.id %>" class="ui button"><i class="unhide icon"></i></a>
-                                            <a href="/urls/<%= link.id %>/edit" class="ui button"><i class="edit icon"></i></a>
-                                            <a href="/urls/<%= link.id %>/delete" onclick="return confirm('Are you sure you want to delete this item?');" class="ui button"><i class="trash icon"></i></a>
+                                            <a href="/urls/<%= user.id %>" class="ui button"><i class="unhide icon"></i></a>
+                                            <a href="/urls/<%= user.id %>/edit" class="ui button"><i class="edit icon"></i></a>
+                                            <a href="/urls/<%= user.id %>/delete" onclick="return confirm('Are you sure you want to delete this item?');" class="ui button"><i class="trash icon"></i></a>
                                         </div>
                                     </td>
                                 </tr>
