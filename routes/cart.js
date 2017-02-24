@@ -3,7 +3,7 @@ var router = express.Router();
 let db = require('../models')
 const crypto = require('crypto');
 const shortid = require('shortid');
-
+let help=require('../helper/help');
 router.get('/',function(req,res,next){
    if (req.session) {
       db.User.findOne({
@@ -13,11 +13,17 @@ router.get('/',function(req,res,next){
         })
       .then(function(user){
         if (user==null) {
-          res.redirect('/users/login');
+          res.redirect('/login');
         }else {
           user.getItems()
           .then(function(items){
-            res.render('cart',{useritem:items})
+          let total=help.total(items)
+           console.log('-----------------',items[0].Chart);
+            res.render('cart',
+            {
+              useritem:items,
+              total:total
+            })
           })
         }
       })
@@ -41,13 +47,25 @@ router.get('/add/:cartid',function(req,res,next){
    }
 });
 
-router.get('/delete/:cartid',function(req,res,next){
+router.get('/delete/:itemid',function(req,res,next){
    if (req.session) {
-     db.Chart.destroy({
-       where:{
-         id:req.params.id
-       }
-     })
+    db.Chart.findOne({
+      where:
+      {
+        userid:req.session.userid,
+        itemid:req.params.id
+      }
+    }).then(function(chart){
+      console.log(chart.id);
+       db.Chart.destroy({
+         where:{
+          id:chart.id
+         }
+       })
+    })
+
+
+
    }else{
      res.redirect('/cart')
    }
