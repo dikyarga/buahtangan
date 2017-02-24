@@ -1,0 +1,42 @@
+<% include ../partials/header %>
+
+
+<body>
+
+    <!-- Following Menu -->
+
+    <!-- Page Contents -->
+    <div class="pusher">
+        <div class="ui vertical stripe segment">
+            <div class="ui middle aligned stackable grid container">
+                <div class="row">
+                    <div class="eight wide column">
+                      <a href="/items" class="ui button">Back to list</a>
+                      
+                        <h3 class="ui header">Create new User</h3>
+                        <form class="ui form wide" action="/items/update/<%= item.id %>" method="post">
+                            <div class="field">
+                                <label>Name</label>
+                                <input name="name" placeholder="Name" type="text">
+                            </div>
+                            <div class="field">
+                                <label>Price</label>
+                                <input name="price" placeholder="Price" type="number">
+                            </div>
+                            <div class="field">
+                                <label>Description</label>
+                                <input name="description" placeholder="Description" type="text">
+                            </div>
+                            <button class="ui primary button" type="submit">Edit item</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <% include ../partials/footer %>
+
+</body>
+
+</html>

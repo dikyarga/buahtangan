@@ -1,0 +1,74 @@
+<% include ../partials/header %>
+<body>
+
+    <!-- Following Menu -->
+
+    <!-- Page Contents -->
+    <div class="pusher">
+
+        <div class="ui vertical stripe segment">
+            <div class="ui middle aligned stackable grid container">
+                <div class="row">
+                    <div class="two wide column">
+                        <h3 class="ui header">All Items </h3>
+
+                    </div>
+                    <div class="four wide column right">
+                        <a href="/urls/new" class="ui basic button">
+                          <i class="icon user"></i>
+                          Add Item
+                        </a>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <table class="ui celled table" id="example">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Description</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <% items.forEach(function(item){  %>
+                                <tr>
+                                    <td>
+                                        <%= item.id %>
+                                    </td>
+                                    <td>
+                                        <a href="<%= item.url %>"><%= item.url %></a>
+                                    </td>
+                                    <td>
+                                      <a href="/item/<%= item.shorted%>"><%= item.shorted%></a>
+                                        <!-- <%= helper.beautifyUrl(item.shorted) %> -->
+                                    </td>
+                                    <td>
+                                      <%= item.click %>
+                                    </td>
+
+                                    <td>
+                                        <div class="ui icon buttons">
+                                            <a href="/items/<%= item.id %>" class="ui button"><i class="unhide icon"></i></a>
+                                            <a href="/items/<%= item.id %>/edit" class="ui button"><i class="edit icon"></i></a>
+                                            <a href="/items/<%= item.id %>/delete" onclick="return confirm('Are you sure you want to delete this item?');" class="ui button"><i class="trash icon"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <% }); %>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <% include ../partials/footer %>
+
+</body>
+
+</html>
