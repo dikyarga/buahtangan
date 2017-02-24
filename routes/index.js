@@ -3,11 +3,13 @@ var router = express.Router();
 
 let db = require('../models')
 /* GET home page. */
-router.get('/', function(req, res, next) {
-    res.render('index', {
-        title: 'Express'
-    });
-});
+
+router.get('/',function(req, res, next){
+  db.Item.findAll()
+  .then(function(items){
+    res.render('index',{items:items})
+  });
+})
 
 router.get('/register', function(req, res, next) {
     if (req.session.username) {
@@ -47,5 +49,7 @@ router.get('/dashboard', function(req, res, next) {
         res.redirect('/login')
     }
 })
+
+
 
 module.exports = router;
