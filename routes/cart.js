@@ -112,6 +112,8 @@ router.get('/checkout', function(req, res, next){
     // send a message to the chat acknowledging receipt of their message
     bot.sendMessage(73953756, 'Hi, ' + ' Diky' + ' ada pesanan baru lho!');
 
+    bot.sendMessage(73953756, 'Dari , ' + req.session.email + '');
+
  res.render('checkout')
 
 
