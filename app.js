@@ -11,8 +11,22 @@ var users = require('./routes/users');
 
 var app = express();
 app.use(cookieParser('sssshhhh'));
-app.use(session({secret: 'sssshhhh'}))
+app.use(session({
+  cookieName: 'session',
+  secret: 'sssshhhh',
+  duration: 30 * 60 * 1000,
+  activeDuration: 5 * 60 * 1000,
+  httpOnly: true,
+  secure: true,
+  ephemeral: true,
+  resave: true,
+saveUninitialized: true
+}))
 
+app.use(function(req, res, next) {
+  res.header('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
+  next();
+});
 
 
 // view engine setup
