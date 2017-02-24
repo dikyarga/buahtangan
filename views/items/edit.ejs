@@ -12,20 +12,24 @@
                 <div class="row">
                     <div class="eight wide column">
                       <a href="/items" class="ui button">Back to list</a>
-                      
-                        <h3 class="ui header">Create new User</h3>
+
+                        <h3 class="ui header">Edit items Info</h3>
                         <form class="ui form wide" action="/items/update/<%= item.id %>" method="post">
                             <div class="field">
                                 <label>Name</label>
-                                <input name="name" placeholder="Name" type="text">
+                                <input name="name" placeholder="Name" type="text" value="<%=item.name%>">
                             </div>
                             <div class="field">
                                 <label>Price</label>
-                                <input name="price" placeholder="Price" type="number">
+                                <input name="price" placeholder="Price" type="number" value="<%=item.price%>">
                             </div>
                             <div class="field">
                                 <label>Description</label>
-                                <input name="description" placeholder="Description" type="text">
+                                <input name="description" placeholder="Description" type="text" value="<%=item.description%>">
+                            </div>
+                            <div class="field">
+                                <label>Description</label>
+                                <input name="pictlink" placeholder="Description" type="text" value="<%=item.pictlink%>">
                             </div>
                             <button class="ui primary button" type="submit">Edit item</button>
                         </form>
