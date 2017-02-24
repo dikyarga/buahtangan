@@ -65,21 +65,26 @@ router.post('/login', function(req, res, next){
       email: req.body.email
     }
   }).then((user) => {
-    const hash = crypto.createHmac('sha256', user.salt)
-                       .update(req.body.password)
-                       .digest('hex');
-    if (user.password == hash) {
-      req.session.username = user.username
-      req.session.id = user.id
-      req.session.email = user.email
-      req.session.role = user.role
-
+    if (user == null) {
       console.log('Authentication success');
-      res.redirect('/dashboard')
-    } else{
-      console.log('Authentication fail');
-      res.redirect('/login')
+      res.redirect('/register')
+    } else {
+      const hash = crypto.createHmac('sha256', user.salt)
+      .update(req.body.password)
+      .digest('hex');
+      if (user.password == hash) {
+        req.session.username = user.username
+        req.session.id = user.id
+        req.session.email = user.email
+        req.session.role = user.role
 
+        console.log('Authentication success');
+        res.redirect('/dashboard')
+      } else{
+        console.log('Authentication fail');
+        res.redirect('/login')
+
+      }
     }
   })
 })
