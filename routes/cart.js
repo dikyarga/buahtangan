@@ -5,7 +5,6 @@ const crypto = require('crypto');
 const shortid = require('shortid');
 
 router.get('/',function(req,res,next){
-  console.log(req.session.email);
    if (req.session) {
       db.User.findOne({
         where:{
@@ -13,23 +12,38 @@ router.get('/',function(req,res,next){
         }
         })
       .then(function(user){
-        //console.log(user.id);
-        user.getItems()
-        .then(function(items){
-          res.render('cart',{useritem:items})
-        })
+        if (user==null) {
+          res.redirect('/users/login');
+        }else {
+          user.getItems()
+          .then(function(items){
+            res.render('cart',{useritem:items})
+          })
+        }
       })
-
    } else {
       res.redirect('/users/login');
    }
 });
 
+router.get('/add/:cartid',function(req,res,next){
+   if (req.session) {
+     db.Chart.create({userid:req.session.id,itemid:req.params.cartid})
+   }else{
+     res.redirect('/cart')
+   }
+});
 
-
-router.get('/insert',function(req,res,next){
-   //console.log('masuk');
-   db.Chart.create({userid:1,itemid:12})
-})
+router.get('/delete/:cartid',function(req,res,next){
+   if (req.session) {
+     db.Chart.destroy({
+       where:{
+         id:req.params.id 
+       }
+     })
+   }else{
+     res.redirect('/cart')
+   }
+});
 
 module.exports = router;
